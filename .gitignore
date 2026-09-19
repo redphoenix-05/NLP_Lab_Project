@@ -1,0 +1,118 @@
+# =====================================================================
+# SarcasmAI NLP Project - .gitignore
+# =====================================================================
+
+# ---------------------------------------------------------------------
+# 1. Datasets & Local CSV Duplicates
+# (Canonical raw data is kept in dataset/ folder)
+# ---------------------------------------------------------------------
+/train.csv
+/test_1.csv
+/test_2.csv
+
+# ---------------------------------------------------------------------
+# 2. Large Model Artifacts, Weights & Checkpoints
+# (Do not commit gigabytes of binary neural weights to git)
+# ---------------------------------------------------------------------
+models/
+**/models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.ckpt
+*.h5
+checkpoints/
+**/checkpoints/
+
+# Caches & HuggingFace / PyTorch downloads
+cache/
+.cache/
+**/.cache/
+huggingface_cache/
+torch_cache/
+models_cache/
+
+# Kaggle kernel staging, sync directories & run logs
+kaggle_kernel/
+kaggle_output/
+pulled_kernel/
+*.log
+explainable-sarcasm-detection.log
+
+# ---------------------------------------------------------------------
+# 3. Frontend (React / Vite) Dependencies & Build Artifacts
+# ---------------------------------------------------------------------
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+
+# ---------------------------------------------------------------------
+# 4. Python Environment & Bytecode
+# ---------------------------------------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter & Testing artifacts
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------
+# 5. Environment Variables, Credentials & Secrets
+# ---------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+kaggle.json
+*.pem
+*.key
+*.cert
+
+# ---------------------------------------------------------------------
+# 6. Operating System & Editor Files
+# ---------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
