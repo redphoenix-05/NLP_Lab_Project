@@ -1,0 +1,72 @@
+export const MODEL_METRICS = {
+  "tfidf": {
+    "model_id": "tfidf",
+    "name": "TF-IDF + Logistic Regression",
+    "type": "Traditional Machine Learning",
+    "architecture": "Bag of Words + L2 Regularized Logistic Classifier",
+    "features": "Word + Bigram n-grams (max 4,000 features)",
+    "metrics": {
+      "accuracy": 0.6557,
+      "precision": 0.2099,
+      "recall": 0.51,
+      "f1": 0.2974,
+      "avg_latency_ms": 0.01
+    }
+  },
+  "rnn": {
+    "model_id": "rnn",
+    "name": "RNN",
+    "type": "Recurrent Neural Network",
+    "architecture": "Embedding (100d) -> Vanilla RNN (128d) -> Linear",
+    "features": "Sequential word tokenization with learned embeddings",
+    "metrics": {
+      "accuracy": 0.8571,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "avg_latency_ms": 0.08
+    }
+  },
+  "lstm": {
+    "model_id": "lstm",
+    "name": "LSTM",
+    "type": "Gated Recurrent Network",
+    "architecture": "Embedding (100d) -> Bidirectional LSTM (256d) -> Linear",
+    "features": "Gated memory cells mitigating vanishing gradients",
+    "metrics": {
+      "accuracy": 0.7936,
+      "precision": 0.1931,
+      "recall": 0.14,
+      "f1": 0.1623,
+      "avg_latency_ms": 0.21
+    }
+  },
+  "bert": {
+    "model_id": "bert",
+    "name": "BERT",
+    "type": "Transformer (Encoder)",
+    "architecture": "12-layer Bidirectional Transformer (bert-base-uncased)",
+    "features": "Subword WordPiece tokenization + Contextual Attention",
+    "metrics": {
+      "accuracy": 0.1429,
+      "precision": 0.1429,
+      "recall": 1.0,
+      "f1": 0.25,
+      "avg_latency_ms": 47.54
+    }
+  },
+  "roberta": {
+    "model_id": "roberta",
+    "name": "RoBERTa",
+    "type": "Optimized Transformer",
+    "architecture": "12-layer RoBERTa (Byte-Pair Encoding, Dynamic Masking)",
+    "features": "Byte-level BPE + Pretrained on 160GB text corpus",
+    "metrics": {
+      "accuracy": 0.7964,
+      "precision": 0.3509,
+      "recall": 0.5,
+      "f1": 0.4124,
+      "avg_latency_ms": 47.22
+    }
+  }
+};
