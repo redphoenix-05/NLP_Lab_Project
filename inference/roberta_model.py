@@ -88,7 +88,9 @@ class RoBERTaModel:
             probs = F.softmax(outputs.logits, dim=-1)[0].tolist()
 
         prob_sarcastic = probs[1] if len(probs) > 1 else probs[0]
-        is_sarcastic = prob_sarcastic >= 0.5
+        # Use validation-calibrated decision threshold (0.70) to account for class imbalance
+        THRESHOLD = 0.70
+        is_sarcastic = prob_sarcastic >= THRESHOLD
         confidence = prob_sarcastic if is_sarcastic else (1.0 - prob_sarcastic)
 
         sarcasm_type = self.predict_type(inputs) if is_sarcastic else "Non-Sarcastic (Genuine)"

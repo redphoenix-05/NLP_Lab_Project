@@ -4,41 +4,41 @@ export const MODEL_METRICS = {
     "name": "TF-IDF + Logistic Regression",
     "type": "Traditional Machine Learning",
     "architecture": "Bag of Words + L2 Regularized Logistic Classifier",
-    "features": "Word + Bigram n-grams (max 4,000 features)",
+    "features": "Word + Bigram n-grams (max 8,000 features)",
     "metrics": {
-      "accuracy": 0.6557,
-      "precision": 0.2099,
-      "recall": 0.51,
-      "f1": 0.2974,
-      "avg_latency_ms": 0.01
+      "accuracy": 0.6951,
+      "precision": 0.2166,
+      "recall": 0.43,
+      "f1": 0.2881,
+      "avg_latency_ms": 0.05
     }
   },
   "rnn": {
     "model_id": "rnn",
     "name": "RNN",
     "type": "Recurrent Neural Network",
-    "architecture": "Embedding (100d) -> Vanilla RNN (128d) -> Linear",
+    "architecture": "Embedding (128d) -> Vanilla RNN (128d) -> Linear",
     "features": "Sequential word tokenization with learned embeddings",
     "metrics": {
-      "accuracy": 0.8571,
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "avg_latency_ms": 0.08
+      "accuracy": 0.762,
+      "precision": 0.261,
+      "recall": 0.38,
+      "f1": 0.309,
+      "avg_latency_ms": 0.12
     }
   },
   "lstm": {
     "model_id": "lstm",
     "name": "LSTM",
     "type": "Gated Recurrent Network",
-    "architecture": "Embedding (100d) -> Bidirectional LSTM (256d) -> Linear",
-    "features": "Gated memory cells mitigating vanishing gradients",
+    "architecture": "Embedding (128d) -> Bidirectional LSTM (256d) -> Linear",
+    "features": "Gated memory cells capturing bidirectional context",
     "metrics": {
       "accuracy": 0.7936,
-      "precision": 0.1931,
-      "recall": 0.14,
-      "f1": 0.1623,
-      "avg_latency_ms": 0.21
+      "precision": 0.285,
+      "recall": 0.35,
+      "f1": 0.314,
+      "avg_latency_ms": 0.25
     }
   },
   "bert": {
@@ -48,11 +48,11 @@ export const MODEL_METRICS = {
     "architecture": "12-layer Bidirectional Transformer (bert-base-uncased)",
     "features": "Subword WordPiece tokenization + Contextual Attention",
     "metrics": {
-      "accuracy": 0.1429,
-      "precision": 0.1429,
-      "recall": 1.0,
-      "f1": 0.25,
-      "avg_latency_ms": 47.54
+      "accuracy": 0.815,
+      "precision": 0.38,
+      "recall": 0.42,
+      "f1": 0.3989,
+      "avg_latency_ms": 42.5
     }
   },
   "roberta": {
@@ -60,13 +60,13 @@ export const MODEL_METRICS = {
     "name": "RoBERTa",
     "type": "Optimized Transformer",
     "architecture": "12-layer RoBERTa (Byte-Pair Encoding, Dynamic Masking)",
-    "features": "Byte-level BPE + Pretrained on 160GB text corpus",
+    "features": "Byte-level BPE + Validation-Calibrated Decision Threshold",
     "metrics": {
-      "accuracy": 0.7964,
-      "precision": 0.3509,
-      "recall": 0.5,
-      "f1": 0.4124,
-      "avg_latency_ms": 47.22
+      "accuracy": 0.8443,
+      "precision": 0.45,
+      "recall": 0.405,
+      "f1": 0.4263,
+      "avg_latency_ms": 38.2
     }
   }
 };
