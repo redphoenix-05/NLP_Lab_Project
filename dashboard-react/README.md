@@ -36,6 +36,6 @@ Nothing typed into this app is sent anywhere — all inference runs client-side.
 
 ## Regenerating the models
 
-If you retrain the baseline models (e.g. after editing the notebook), re-run the
-export cells in Section 14 of `Explainable_Sarcasm_Detection.ipynb` and copy the two
-resulting JSON files into `src/models/`, replacing the existing ones.
+If you retrain the baseline models (e.g. after editing the notebooks), re-run the
+export cells in `1_TFIDF_LogisticRegression.ipynb` or `5_RoBERTa_Sarcasm_Detection_Main.ipynb` and copy the
+resulting model files into `models/`, replacing the existing ones.
